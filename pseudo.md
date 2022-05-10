@@ -27,7 +27,7 @@
 
 5. Create function to initialize the app, divide it up based on employee roles
 
-    - All teams need at least one manager -- create a nested function to generate a manager with inquirer prompts
+    - All teams need at least one manager -- create a nested function to generate a manager with inquirer prompts (name, email, id, officeNum)
     - Create a new Manager object using the Manager class and the data from the inquirer prompts
     -Push that object to the array of employees
 
