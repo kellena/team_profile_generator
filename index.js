@@ -34,9 +34,7 @@ function init() {
         }
         ])
         .then(answer => {
-            // console.log(answer)
             const manager = new Manager(answer.managerName, answer.managerId, answer.managerEmail, answer.managerOfficeNum);
-            // console.log(manager);
             teamArray.push(manager)
             console.log(teamArray);
             addEmployee();
@@ -93,7 +91,36 @@ function addIntern() {
         .then (answer => {
             const intern = new Intern(answer.internName, answer.internId, answer.internEmail, answer.internSchool);
             teamArray.push(intern)
-            console.log(teamArray)
+        })
+}
+
+function addEngineer() {
+    inquirer
+        .prompt([
+            {           
+                type: "input",
+                name: "engineerName",
+                message: "What is your engineer's name?",
+            },
+            {           
+                type: "input",
+                name: "engineerId",
+                message: "What is your engineer's ID?",
+            },
+            {           
+                type: "input",
+                name: "engineerEmail",
+                message: "What is your engineer's email?",
+            },
+            {           
+                type: "input",
+                name: "engineerGithub",
+                message: "What is your engineer's github?",
+            },
+        ]) 
+        .then (answer => {
+            const engineer = new Engineer(answer.engineerName, answer.engineerId, answer.engineerEmail, answer.engineerGithub);
+            teamArray.push(engineer)
         })
 }
 
