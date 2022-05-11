@@ -91,9 +91,7 @@ function addIntern() {
             },
         ]) 
         .then (answer => {
-            // console.log(answer)
             const intern = new Intern(answer.internName, answer.internId, answer.internEmail, answer.internSchool);
-            // console.log(intern)
             teamArray.push(intern)
             console.log(teamArray)
         })
