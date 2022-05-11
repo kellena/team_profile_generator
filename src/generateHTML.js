@@ -59,4 +59,24 @@ function generateTeamCards(teamArray){
 
     }
 
+    const employeeArray = [];
+
+    employeeArray.push(teamArray
+        .filter(employee => employee.getRole() === "Manager")
+        .map(manager => generateManager(manager))
+    );
+
+    employeeArray.push(teamArray
+        .filter(employee => employee.getRole() === "Engineer")
+        .map(engineer => generateEngineer(engineer))
+        .join("")
+    );
+
+    employeeArray.push(teamArray
+        .filter(employee => employee.getRole() === "Intern")
+        .map(intern => generateIntern(intern))
+        .join("")
+    );
+    
+    return employeeArray.join("");
 }
