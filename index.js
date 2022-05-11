@@ -1,11 +1,10 @@
 const inquirer = require ('inquirer');
 const fs = require ('fs');
-const path = require ('path');
 
 const Engineer = require ('./lib/Engineer');
 const Intern = require ('./lib/Intern');
 const Manager = require ('./lib/Manager');
-const { type } = require('os');
+
 
 let teamArray = [];
 
@@ -121,7 +120,22 @@ function addEngineer() {
         .then (answer => {
             const engineer = new Engineer(answer.engineerName, answer.engineerId, answer.engineerEmail, answer.engineerGithub);
             teamArray.push(engineer)
+            writePage();
         })
 }
 
-init();
+const writePage = (pageContent) => {
+    fs.writeFile('./dist/index.html', pageContent, (err) =>{
+        if (err) {
+            console.log(err)
+        } else {
+            console.log('index.html creation successful')
+        }
+    })
+};
+
+init()
+
+.then(data => generatePage(data))
+.then(generateHtml => writePage(generateHtml))
+.catch(err => console.log(err))
