@@ -134,8 +134,5 @@ const writePage = (pageContent) => {
     })
 };
 
-init()
+init();
 
-.then(data => generatePage(data))
-.then(generateHtml => writePage(generateHtml))
-.catch(err => console.log(err))
