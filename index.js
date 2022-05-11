@@ -124,15 +124,8 @@ function addEngineer() {
         })
 }
 
-const writePage = (pageContent) => {
-    fs.writeFile('./dist/index.html', pageContent, (err) =>{
-        if (err) {
-            console.log(err)
-        } else {
-            console.log('index.html creation successful')
-        }
-    })
-};
-
 init();
 
+function writePage (){
+    fs.writeFileSync(fileToDist, generateHTML(teamArray), "utf-8")
+}
