@@ -1,32 +1,28 @@
-const Engineer = require("../lib/engineer");
+const Engineer = require('../lib/Engineer');
 
-describe("Testing Engineer Methods", () => {
+describe('Engineer', () =>{
 
-    const engineer = new Engineer("Dean Venture", "0202", "dVenture@venture.com", "brother2");
+    it('Has name, id, email, and github attributes.', () => {
 
-    it("Returns Engineer Name", () => {
-        const name = engineer.getName();
-        expect(name).toBe("Dean Venture");
+        const dean = new Engineer('Dean', 20, 'dean_o@gmail.com', 'dean2001');
+
+        expect(dean.name).toBe('Dean');
+        expect(dean.id).toBe(20);
+        expect(dean.email).toBe('dean_o@gmail.com');
+        expect(dean.github).toBe('dean2001')
+
     });
 
-    it("Returns Engineer ID", () => {
-        const id = engineer.getId();
-        expect(id).toBe("0202");
+    it('Has name, email, id, and role attributes.', () => {
+
+        const hank = new Engineer('Hank', 19, 'theBAT@gmail.com', 'hank2002');
+
+        expect(hank.getName()).toBe('Hank');
+        expect(hank.getId()).toBe(19);
+        expect(hank.getEmail()).toBe('theBAT@gmail.com');
+        expect(hank.getGitHub()).toBe('hank2002')
+        expect(hank.getRole()).toBe('Engineer');
+
     });
 
-    it("Returns Engineer Email", () => {
-        const email = engineer.getEmail();
-        expect(email).toBe("dVenture@venture.com")
-    });
-
-    it("Returns Engineer GitHub", () => {
-        const github = engineer.getGithub();
-        expect(github).toBe("brother2")
-    });
-
-    it("Returns Engineer Role", () => {
-        const role = engineer.getRole()
-        expect(role).toBe("Engineer")
-    });
-    
 });

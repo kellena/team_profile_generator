@@ -1,32 +1,28 @@
-const Manager = require("../lib/manager");
+const Manager = require("../lib/Manager");
 
-describe("Testing Manager Methods", () => {
+describe('Manager', () =>{
 
-  const manager = new Manager("Doc Venture", "0101", "docSexy@venture.com", "1337");
+    it('Should have name, id, email, and office number attributes after instantiation.', () => {
 
-    it("Returns Manager Name", () => {
-        const name = manager.getName();
-        expect(name).toBe("Doc Venture");
+        const dean = new Manager('Dean', 20, 'dean_o@gmail.com', 42);
+
+        expect(dean.name).toBe('Dean');
+        expect(dean.id).toBe(20);
+        expect(dean.email).toBe('dean@gmail.com');
+        expect(dean.OfficeNumber).toBe(42)
+
     });
 
-    it("Returns Manager ID", () => {
-        const id = manager.getId();
-        expect(id).toBe("0101");
-    });
+    it('should get the name, email, id, and role using methods', () => {
 
-    it("Returns Manager Email", () => {
-        const email = manager.getEmail();
-        expect(email).toBe("docSexy@venture.com")
-    });
+        const hank = new Manager('Hank', 19, 'theBAT@gmail.com', 69);
 
-    it("Returns Manager Office Number", () => {
-        const officeNumber = manager.officeNumber;
-        expect(officeNumber).toBe("1337")
-    });
+        expect(hank.getName()).toBe('Hank');
+        expect(hank.getId()).toBe(19);
+        expect(hank.getEmail()).toBe('theBAT@gmail.com');
+        expect(hank.officeNumber()).toBe(69)
+        expect(hank.getRole()).toBe('Manager');
 
-    it("Returns Manager Role", () => {
-        const role = manager.getRole()
-        expect(role).toBe("Manager")
     });
 
 });

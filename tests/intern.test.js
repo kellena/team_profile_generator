@@ -1,32 +1,28 @@
-const Intern = require("../lib/intern");
+const Intern = require("../lib/Intern");
 
-describe("Testing Intern Methods", () => {
+describe('Intern', () =>{
 
-  const intern = new Intern("Hank Venture", "0303", "theBat@venture.com", "Learning Beds");
+    it('Should have name, id, email, and school attributes after instantiation.', () => {
 
-    it("Returns Intern Name", () => {
-        const name = intern.getName();
-        expect(name).toBe("Hank Venture");
+        const dean = new Intern('Dean', 20, 'dean_o@gmail.com', 'Learning Beds');
+
+        expect(dean.name).toBe('Dean');
+        expect(dean.id).toBe(20);
+        expect(dean.email).toBe('dean_o@gmail.com');
+        expect(dean.school).toBe('Learning Beds')
+
     });
 
-    it("Returns Intern ID", () => {
-        const id = intern.getId();
-        expect(id).toBe("0303");
-    });
+    it('should get the name, email, id, and role using methods', () => {
 
-    it("Returns Intern Email", () => {
-        const email = intern.getEmail();
-        expect(email).toBe("theBat@venture.com")
-    });
+        const hank = new Intern('Hank', 19, 'theBat@gmail.com', 'Learning Beds');
 
-    it("Returns Intern School", () => {
-        const school = intern.getSchool();
-        expect(school).toBe("Learning Beds")
-    });
+        expect(hank.getName()).toBe('Hank');
+        expect(hank.getId()).toBe(19);
+        expect(hank.getEmail()).toBe('theBat@gmail.com');
+        expect(hank.getSchool()).toBe('Learning Beds')
+        expect(hank.getRole()).toBe('Intern');
 
-    it("Returns Intern Role", () => {
-        const role = intern.getRole()
-        expect(role).toBe("Intern")
     });
 
 });

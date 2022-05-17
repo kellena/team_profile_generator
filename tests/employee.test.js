@@ -5,22 +5,22 @@ describe('Employee', () =>{
 
     it('Has name, id, and email attributes.', () => {
 
-        const hank = new Employee('Hank', 19, 'theBAT@gmail.com');
+        const dean = new Employee('Dean', 20, 'dean_o@gmail.com');
 
-        expect(hank.name).toBe('hank');
-        expect(hank.id).toBe(19);
-        expect(hank.email).toBe('theBat@gmail.com');
+        expect(dean.name).toBe('Dean');
+        expect(dean.id).toBe(20);
+        expect(dean.email).toBe('dean_o@gmail.com');
 
     });
 
     it('Has name, email, id, and role attributes.', () => {
 
-        const dean = new Employee('Dean', 20, 'prog_rock_rules@gmail.com');
+        const hank = new Employee('Hank', 19, 'theBAT@gmail.com');
 
-        expect(dean.getName()).toBe('Dean');
-        expect(dean.getId()).toBe(20);
-        expect(dean.getEmail()).toBe('prog_rock_rules@gmail.com');
-        expect(dean.getRole()).toBe('Employee');
+        expect(hank.getName()).toBe('Hank');
+        expect(hank.getId()).toBe(19);
+        expect(hank.getEmail()).toBe('theBAT@gmail.com');
+        expect(hank.getRole()).toBe('Employee');
 
     });
 
