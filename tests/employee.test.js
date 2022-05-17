@@ -1,27 +1,27 @@
-const Employee = require("../lib/employee");
+const Employee = require('../lib/Employee');
 
-describe("Testing Employee Methods", () => {
 
-    const employee = new Employee("Johnny Quest", "4242", "jQuest@venture.com");
+describe('Employee', () =>{
 
-    it("Returns Employee Name", () => {
-        const name = employee.getName();
-        expect(name).toBe("Johnny Quest");
+    it('Has name, id, and email attributes.', () => {
+
+        const hank = new Employee('Hank', 19, 'theBAT@gmail.com');
+
+        expect(hank.name).toBe('hank');
+        expect(hank.id).toBe(19);
+        expect(hank.email).toBe('theBat@gmail.com');
+
     });
 
-    it("Returns Employee ID", () => {
-        const id = employee.getId();
-        expect(id).toBe("4242");
-    });
+    it('Has name, email, id, and role attributes.', () => {
 
-    it("Returns Employee Email", () => {
-        const email = employee.getEmail();
-        expect(email).toBe("jQuest@venture.com")
-    });
+        const dean = new Employee('Dean', 20, 'prog_rock_rules@gmail.com');
 
-    it("Returns Employee Role", () => {
-        const role = employee.getRole()
-        expect(role).toBe("Employee")
+        expect(dean.getName()).toBe('Dean');
+        expect(dean.getId()).toBe(20);
+        expect(dean.getEmail()).toBe('prog_rock_rules@gmail.com');
+        expect(dean.getRole()).toBe('Employee');
+
     });
 
 });

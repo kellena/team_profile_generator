@@ -4,6 +4,7 @@ function generateCards(teamArray){
 
         return `
         <div class="card employee-card">
+
             <div class="card-header">
                 <h2 class="card-title">${employee.getName()}</h2>
                 <h3 class="card-title"><i class="fas fa-user-tie mr-2"></i>${employee.getRole()}</h3>
@@ -16,6 +17,7 @@ function generateCards(teamArray){
                     <li class="list-group-item">Office Number: ${employee.officeNumber()}</li>
                 </ul>
             </div>
+
         </div>`
 
     }
@@ -24,6 +26,7 @@ function generateCards(teamArray){
 
         return `
         <div class="card employee-card">
+
             <div class="card-header">
                 <h2 class="card-title">${employee.getName()}</h2>
                 <h3 class="card-title"><i class="fas fa-user mr-2"></i>${employee.getRole()}</h3>
@@ -36,6 +39,7 @@ function generateCards(teamArray){
                     <li class="list-group-item">GitHub: ${employee.getGitHub()}</li>
                 </ul>
             </div>
+
         </div>`
 
     }
@@ -43,6 +47,7 @@ function generateCards(teamArray){
     function generateIntern (employee){
         return `
         <div class="card employee-card">
+
             <div class="card-header">
                 <h2 class="card-title">${employee.getName()}</h2>
                 <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${employee.getRole()}</h3>
@@ -55,6 +60,7 @@ function generateCards(teamArray){
                     <li class="list-group-item">School: ${employee.getSchool()}</li>
                 </ul>
             </div>
+
         </div>`
 
     }
@@ -84,6 +90,7 @@ function generateCards(teamArray){
 
 
 module.exports = teamArray => {
+    
     return `
     <!DOCTYPE html>
     <html lang="en">
@@ -110,7 +117,7 @@ module.exports = teamArray => {
         <div class="container">
             <div class="row">
                 <div class="team-area col-12 d-flex justify-content-center">
-                    ${generateCards(teamArray)}
+                    ${generateTeamCards(teamArray)}
                 </div>
             </div>
         </div>
@@ -118,4 +125,5 @@ module.exports = teamArray => {
     </body>
 
     </html>`;
+
 };
