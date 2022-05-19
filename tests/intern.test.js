@@ -2,7 +2,7 @@ const Intern = require("../lib/Intern");
 
 describe('Intern', () =>{
 
-    it('Should have name, id, email, and school attributes after instantiation.', () => {
+    it('Has name, id, email, and school attributes.', () => {
 
         const dean = new Intern('Dean', 20, 'dean_o@gmail.com', 'Learning Beds');
 
@@ -13,7 +13,7 @@ describe('Intern', () =>{
 
     });
 
-    it('should get the name, email, id, and role using methods', () => {
+    it('Has the name, email, id, and role.', () => {
 
         const hank = new Intern('Hank', 19, 'theBat@gmail.com', 'Learning Beds');
 
